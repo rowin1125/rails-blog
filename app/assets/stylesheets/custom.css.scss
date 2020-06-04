@@ -1,0 +1,35 @@
+@import "bootstrap/dist/css/bootstrap";
+
+.navbar {
+  background-color: black !important;
+  .nav-link {
+    color: white !important;
+  }
+  #logo {
+    color: white !important;
+    float: left;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.7rem;
+    letter-spacing: -1px;
+  }
+}
+
+.jumbotron {
+  background-image: url("writing.jpg");
+  background-size: cover;
+  background-position: center center;
+  height: 600px;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: lightgray !important;
+}
+
+#sticky-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

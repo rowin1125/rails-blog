@@ -1,0 +1,39 @@
+<div class="container">
+  <% if @article.errors.any? %>
+    <div class="row justify-content-center">
+      <div class="alert alert-danger col-10 alert-dismissible fade show" role="alert">
+        <h4 class="alert-heading">The following errors occurs: </h4>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <ul>
+          <% @article.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <%= form_with(model: @article, class: 'shadow bg-info p-3 rounded', local: true) do |f| %>
+        <div class="form-group row">
+          <%= f.label :title, class: 'col-2 col-form-label text-light' %>
+          <div class="col-10">
+            <%= f.text_field  :title, class: 'form-control shadow rounded', placeholder: 'Title of article' %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <%= f.label :description, class: 'col-2 col-form-label text-light' %> <br>
+          <div class="col-10">
+            <%= f.text_area :description, class: 'form-control shadow rounded', rows: 10, placeholder: 'Description of article' %>
+          </div>
+        </div>
+        <div class="form-group row justify-content-center">
+          <%= f.submit class: 'btn btn-success'%>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <%= link_to 'Back to overview', articles_path, class: 'row justify-content-center text-info mt-3' %>
+</div>
