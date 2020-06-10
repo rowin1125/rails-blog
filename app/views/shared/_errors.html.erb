@@ -1,0 +1,15 @@
+<% if obj.errors.any? %>
+  <div class="row justify-content-center">
+    <div class="alert alert-danger col-10 alert-dismissible fade show" role="alert">
+      <h4 class="alert-heading">The following errors occurs while filling in a <%= obj.class.name.downcase %>: </h4>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <ul>
+        <% obj.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
