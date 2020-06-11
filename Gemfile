@@ -28,7 +28,6 @@ gem "bcrypt", "~> 3.1.7"
 gem "bootsnap", ">= 1.4.2", require: false
 
 group :production do
-  gem 'pg'
 end
 
 group :development, :test do
